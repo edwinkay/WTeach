@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0;
+}
+
+.mat-expansion-panel-body {
+    padding: 0 !important;
+}
+/* Establece el color negro inicial */
+.custom-expansion-panel .mat-expansion-panel-header-description,
+.custom-expansion-panel .mat-expansion-indicator::after {
+    color: rgba(0, 0, 0, 0.54);
+}
+
+/* Cambia el color a blanco cuando el panel está abierto */
+.custom-expansion-panel.mat-expanded .mat-expansion-panel-header-description,
+.custom-expansion-panel.mat-expanded .mat-expansion-indicator::after {
+    color: white !important;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

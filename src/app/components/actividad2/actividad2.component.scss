@@ -1,0 +1,150 @@
+.title {
+  display: flex;
+  border-bottom: 2px solid #00000021;
+  padding-bottom: 10px;
+}
+
+.iconos {
+  color: #f0b429;
+  font-size: 40px;
+  margin-right: 10px;
+}
+
+h1 {
+  color: #005883;
+  margin: 0;
+  padding-left: 17px;
+  font-weight: bolder;
+}
+h3 {
+  color: #005883;
+}
+
+/* Estilo predeterminado del radio button */
+input[type="radio"] {
+  transform: scale(1);
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+input[type="radio"]:checked {
+  border-color: #ff4081;
+  box-shadow: 0 0 4px 7px rgb(255 64 128 / 19%);
+}
+
+/* Estilo del radio button cuando está seleccionado */
+input[type="radio"]:checked::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: #ff4081;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+label {
+  display: flex;
+  padding-left: 20px;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 8px;
+}
+.circle-icon {
+  background-color: #16a34a;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #16a34a;
+}
+.incorrect-circle-icon {
+  background-color: red; /* Cambia el color de fondo a rojo */
+  border-radius: 50%; /* Esto hará que el ícono sea un círculo */
+  color: white; /* Cambia el color de fuente a blanco */
+  font-size: 24px; /* Ajusta el tamaño del ícono según tus preferencias */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px; /* Ajusta el ancho y el alto según tus preferencias */
+  height: 36px;
+  border: 2px solid red; /* Agrega un borde rojo de 2px */
+}
+
+.ok {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding-top: 12px;
+}
+.zoom {
+  width: 38px;
+  height: 38px;
+  font-size: 38px;
+}
+.boton {
+  color: white;
+  background-color: #005882;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.boton[disabled] {
+  background-color: gray;
+  cursor: not-allowed;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.contenido-modal {
+  background-color: #fff;
+
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  font-size: 24px;
+  height: 41px;
+  width: 100%;
+  background-color: #005883;
+  color: white;
+  text-align: center;
+  padding-top: 12px;
+}
+.contenido-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.icon-info {
+  font-size: 40px;
+  color: #f0b429;
+  position: relative;
+  right: 8px;
+  padding-bottom: 38px;
+}

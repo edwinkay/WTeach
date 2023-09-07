@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #005883;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ajusta este valor según sea necesario */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Agrega una sombra si lo deseas */
+}
+
+.logo img {
+  left: 73px;
+  position: relative;
+  height: 62px;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.title {
+  text-align: center;
+  flex-grow: 1;
+}
+
+.title h1 {
+  margin: 0;
+}
+
+.mispan {
+  font-size: 35px;
+}

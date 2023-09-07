@@ -1,0 +1,460 @@
+<div style="margin: 15px">
+  <div class="title">
+    <mat-icon class="iconos">description</mat-icon>
+    <h1>Conjunto de seleccion multiple</h1>
+  </div>
+  <div>
+    <h3>Resolver las sumas</h3>
+    <form (ngSubmit)="verificarRespuestas()">
+      <h4>A ¿Cuanto es 2+2?</h4>
+      <label>
+        <input
+          type="radio"
+          name="respuestaA"
+          value="3"
+          [(ngModel)]="comparar.resA"
+          (change)="onRadioChange1($event)"
+        />
+        A. 3
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaA"
+          value="4"
+          [(ngModel)]="comparar.resA"
+          (change)="onRadioChange1($event)"
+        />
+        B. 4
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaA"
+          value="5"
+          [(ngModel)]="comparar.resA"
+          (change)="onRadioChange1($event)"
+        />
+        C. 5
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaA"
+          value="6"
+          [(ngModel)]="comparar.resA"
+          (change)="onRadioChange1($event)"
+        />
+        D. 6
+      </label>
+      <ng-container>
+        <div class="ok" *ngIf="resultados.respuestaA == 'Bien hecho'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+                
+              <div class="circle-icon">
+                <mat-icon class="zoom">check_circle</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Bien hecho</span>
+            </div>
+            <button class="boton" (click)="abrirModalA()">
+              Ver retroalimentacion
+            </button>
+          </div>
+
+          <div class="modal" *ngIf="modalActivoA">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio A</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px">
+                  Felicitaciones, lo hiciste muy bien.
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ok" *ngIf="resultados.respuestaA == 'Respuesta incorrecta'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+              <div class="incorrect-circle-icon">
+                <mat-icon class="zoom">cancel</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Respuesta incorrecta</span>
+            </div>
+            <button class="boton" (click)="abrirModalA()">
+              Ver retroalimentacion
+            </button>
+          </div>
+
+          <div class="modal" *ngIf="modalActivoA">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio A</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px; padding: 0 45px 0 45px">
+                  2+2 es igual a 4
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <h4>B ¿Cuanto es 4+6?</h4>
+      <label>
+        <input
+          type="radio"
+          name="respuestaB"
+          value="15"
+          [(ngModel)]="comparar.resB"
+          (change)="onRadioChange2($event)"
+        />
+        A. 15
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaB"
+          value="10"
+          [(ngModel)]="comparar.resB"
+          (change)="onRadioChange2($event)"
+        />
+        B. 10
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaB"
+          value="6"
+          [(ngModel)]="comparar.resB"
+          (change)="onRadioChange2($event)"
+        />
+        C. 6
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaB"
+          value="8"
+          [(ngModel)]="comparar.resB"
+          (change)="onRadioChange2($event)"
+        />
+        D. 8
+      </label>
+      <ng-container>
+        <div class="ok" *ngIf="resultados.respuestaB == 'Bien hecho'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+                
+              <div class="circle-icon">
+                <mat-icon class="zoom">check_circle</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Bien hecho</span>
+            </div>
+            <button class="boton" (click)="abrirModalB()">
+              Ver retroalimentacion
+            </button>
+          </div>
+          <div class="modal" *ngIf="modalActivoB">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio B</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px">
+                  Felicitaciones, lo hiciste muy bien.
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ok" *ngIf="resultados.respuestaB == 'Respuesta incorrecta'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+              <div class="incorrect-circle-icon">
+                <mat-icon class="zoom">cancel</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Respuesta incorrecta</span>
+            </div>
+            <button class="boton" (click)="abrirModalB()">
+              Ver retroalimentacion
+            </button>
+          </div>
+          <div class="modal" *ngIf="modalActivoB">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio B</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px; padding: 0 45px 0 45px">
+                  4+6 es igual a 10
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <h4>C ¿Cuanto es 3+2?</h4>
+      <label>
+        <input
+          type="radio"
+          name="respuestaC"
+          value="0"
+          [(ngModel)]="comparar.resC"
+          (change)="onRadioChange3($event)"
+        />
+        A. 0
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaC"
+          value="7"
+          [(ngModel)]="comparar.resC"
+          (change)="onRadioChange3($event)"
+        />
+        B. 7
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaC"
+          value="9"
+          [(ngModel)]="comparar.resC"
+          (change)="onRadioChange3($event)"
+        />
+        C. 9
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaC"
+          value="5"
+          [(ngModel)]="comparar.resC"
+          (change)="onRadioChange3($event)"
+        />
+        D. 5
+      </label>
+      <ng-container>
+        <div class="ok" *ngIf="resultados.respuestaC == 'Bien hecho'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+                
+              <div class="circle-icon">
+                <mat-icon class="zoom">check_circle</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Bien hecho</span>
+            </div>
+            <button class="boton" (click)="abrirModalC()">
+              Ver retroalimentacion
+            </button>
+          </div>
+          <div class="modal" *ngIf="modalActivoC">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio C</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px">
+                  Felicitaciones, lo hiciste muy bien.
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ok" *ngIf="resultados.respuestaC == 'Respuesta incorrecta'">
+          <div style="display: flex; align-items: center; padding-bottom: 7px">
+            <div style="padding-bottom: 7px">
+            <div style="display: flex; align-items: center; padding-bottom: 7px">
+              <div class="incorrect-circle-icon">
+                <mat-icon class="zoom">cancel</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Respuesta incorrecta</span>
+            </div>
+            <button class="boton" (click)="abrirModalC()">
+              Ver retroalimentacion
+            </button>
+          </div>
+          </div>
+          <div class="modal" *ngIf="modalActivoC">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio C</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px; padding: 0 45px 0 45px">
+                  3+2 es igual a 5
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <h4>D ¿Cuanto es 7+1?</h4>
+      <label>
+        <input
+          type="radio"
+          name="respuestaD"
+          value="9"
+          [(ngModel)]="comparar.resD"
+          (change)="onRadioChange4($event)"
+        />
+        A. 9
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaD"
+          value="4"
+          [(ngModel)]="comparar.resD"
+          (change)="onRadioChange4($event)"
+        />
+        B. 4
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaD"
+          value="8"
+          [(ngModel)]="comparar.resD"
+          (change)="onRadioChange4($event)"
+        />
+        C. 8
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="respuestaD"
+          value="5"
+          [(ngModel)]="comparar.resD"
+          (change)="onRadioChange4($event)"
+        />
+        D. 5
+      </label>
+      <ng-container>
+        <div class="ok" *ngIf="resultados.respuestaD == 'Bien hecho'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+                
+              <div class="circle-icon">
+                <mat-icon class="zoom">check_circle</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Bien hecho</span>
+            </div>
+            <button class="boton" (click)="abrirModalD()">
+              Ver retroalimentacion
+            </button>
+          </div>
+          <div class="modal" *ngIf="modalActivoD">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio D</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px">
+                  Felicitaciones, lo hiciste muy bien.
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ok" *ngIf="resultados.respuestaD == 'Respuesta incorrecta'">
+          <div style="padding-bottom: 7px">
+            <div
+              style="display: flex; align-items: center; padding-bottom: 7px"
+            >
+              <div class="incorrect-circle-icon">
+                <mat-icon class="zoom">cancel</mat-icon>
+              </div>
+              <span style="padding-left: 7px">Respuesta incorrecta</span>
+            </div>
+            <button class="boton" (click)="abrirModalD()">
+              Ver retroalimentacion
+            </button>
+          </div>
+          <div class="modal" *ngIf="modalActivoD">
+            <div class="contenido-modal">
+              <h3 class="header">Retroalimentacion</h3>
+              <div class="contenido-info">
+                <p style="color: #005883; font-size: 20px">Ejercicio D</p>
+                <div>
+                  <mat-icon class="icon-info">info</mat-icon>
+                </div>
+                <p style="padding-bottom: 10px; padding: 0 45px 0 45px">
+                  7+1 es igual a 8
+                </p>
+                <div style="display: flex; gap: 9px">
+                  <button class="boton" (click)="cerrarModal()">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <input
+        style="position: relative; left: 43%"
+        [hidden]="ocultar"
+        class="boton"
+        type="submit"
+        value="Revisar respuestas"
+        [disabled]="disab"
+      />
+    </form>
+  </div>
+</div>
